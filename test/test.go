@@ -2,11 +2,15 @@ package main
 
 import (
 	"fmt"
-	"functional"
+	"os"
+	"parp"
 )
 
 func main() {
-	A := []int{1, 2, 3}
-	B := functional.Map(A, func(i int) string { return fmt.Sprintf("\"%v\"", i) })
-	fmt.Println(B)
+	params := parp.Process(os.Args[1:len(os.Args)], []string{"-n", "-p"}, []string{"--trace"})
+	fmt.Println(params)
+	n := params["-n"].Int()
+	p := params["-p"].String()
+	trace := params["--trace"].Bool()
+	fmt.Printf("n: %v\np: %v\ntrace: %v\n", n, p, trace)
 }
