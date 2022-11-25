@@ -41,7 +41,6 @@ func _quicksort(A []int, lo int, hi int) {
 	p := _partition(A, lo, hi)
 	_quicksort(A, lo, p-1)
 	_quicksort(A, p+1, hi)
-	return
 }
 
 func _partition(A []int, lo int, hi int) int {

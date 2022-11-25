@@ -4,9 +4,8 @@ go 1.19
 
 replace functional => ../functional
 
-require (
-	functional v0.0.0-00010101000000-000000000000
-	parp v0.0.0-00010101000000-000000000000
-)
+require pipeline v0.0.0-00010101000000-000000000000
 
 replace parp => ../parp
+
+replace pipeline => ../pipeline
